@@ -1,0 +1,14 @@
+<div class="mb-3">
+  
+  {% for field  in form  %}
+    <div class="mb-3">
+      {% if field.type == 'BooleanField' %}
+      {{field(class_='form-check-input')}}
+      {{field.label(class_='form-check-label') if field.render_kw["type"] != "hidden" else "" }}
+      {% else %}
+      {{field.label(class_='form-label ') if field.render_kw["type"] != "hidden" else ""}}
+      {{field(class_='form-control')}}
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

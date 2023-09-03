@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% set title  = 'Add a Pet' %}
+
+{% block content %}
+  <form enctype="multipart/form-data">
+    {% include 'common/pet-form-fields.html' %}
+    <button type=
+    "submit" 
+    class="btn btn-primary" 
+    formaction="/pets/new" 
+    formmethod="POST">Add</button>
+  </form>
+{% endblock %}

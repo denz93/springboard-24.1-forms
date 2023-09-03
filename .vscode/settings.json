@@ -1,0 +1,9 @@
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.indentSize": "tabSize",
+    "editor.guides.indentation": true,
+    "editor.detectIndentation": true
+  }
+}

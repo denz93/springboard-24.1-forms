@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% set title = 'Pets' %}
+{% block content %}
+  {% include 'common/list-pet.html'   %}
+  <div class="mt-4">
+
+    <a href="/pets/new" class="btn btn-success">Add a Pet</a>
+  </div>
+  
+{% endblock %}

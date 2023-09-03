@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% set title  = 'Edit a Pet' %}
+{% block content  %}
+  {% if pet is none %}
+    <div>Pet is not exist</div>
+  {% else %}
+
+    <div class="d-flex flex-column gap-3 mb-5">
+      <img 
+        src="{{pet.photo_url}}" 
+        alt="{{pet.name}}" 
+        style="width: 220px; height: 220px; object-fit:cover;"
+        onerror="this.src='/static/image.svg'">
+      <div>
+        <span class="text-primary">{{pet.name}} </span>
+        is
+        <span> {{"available" if pet.available else "unavailable"}}!</span>
+      </div>
+      <div>Species: {{pet.species}}</div>
+      {% if pet.age != None %}
+        
+      <div>Age: {{pet.age}}</div>
+      {% endif %}
+    </div>
+    <h3>Update</h3>
+    <form action="" enctype="multipart/form-data">
+      {% include 'common/pet-form-fields.html'   %}
+      <button class="btn btn-primary " type="submit" formaction="/{{pet.id}}" formmethod="POST">Submit</button>
+    </form>
+  {% endif %}
+{% endblock %}

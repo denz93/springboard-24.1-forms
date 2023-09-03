@@ -1,0 +1,18 @@
+<div class="d-flex gap-3 flex-wrap w-100 ">
+
+    {% for pet  in pets  %}
+      <a class="d-flex flex-column gap-1" href="/{{pet.id}}">
+        <img 
+          src="{{pet.photo_url}}" 
+          alt="{{pet.name}}" 
+          style="width: 220px; height: 220px; object-fit:cover;"
+          onerror="this.src='/static/image.svg'">
+        <p>
+          <span class="text-primary">{{pet.name}} </span>
+          is
+          <span> {{"available" if pet.available else "unavailable"}}!</span>
+        </p>
+      </a>
+    {% endfor %}
+</div>
+
